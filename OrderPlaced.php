@@ -25,7 +25,7 @@
 		$orderid=1;
 	}
 	else{
-		$orderid= ($result["OrderID"])-1;
+		$orderid= ($result["OrderID"])+1;
 	}
 	$sql= "INSERT INTO AllOrders (OrderID, Name, CardNumber, PhoneNumber) VALUES ('$orderid', '$name', '$cardnumber', '$phonenumber')";
 
