@@ -1,0 +1,77 @@
+body
+{
+width: 90%;
+margin-left: auto;
+margin-right: auto;
+margin-top: 20px;
+margin-bottom: 20px;
+border-radius: 5px;
+box-shadow: 0 0 5px 5px;
+padding: 10px;
+font-family: Verdana;
+}
+
+h1
+{
+background-color: #660000;
+color: white;
+text-align: center;
+padding: 10px;
+box-shadow: 5px 5px black;
+}
+
+table.courses, th.courses, td.courses
+{
+border: 1px solid black;
+border-collapse: collapse;
+}
+
+th.courses,td.courses
+{
+padding: 5px;
+}
+
+th.courses
+{
+text-align: left;
+}
+
+h2
+{
+color: black;
+border-bottom: dotted;
+padding: 10px;
+font-size: 35px;
+font-family: Agency FB;
+}
+
+h3
+{
+background-color: black;
+color: white;
+text-align: center;
+padding: 10px;
+}
+
+#logo
+{
+text-align: left;
+}
+
+p
+{
+font-family: Verdana;
+font-weight: bold;
+text-align: center;
+}
+
+#bio
+{
+font-family: Verdana;
+font-weight: bold;
+}
+
+#video
+{
+text-align: center;
+}
