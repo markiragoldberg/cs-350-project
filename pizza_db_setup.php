@@ -33,7 +33,7 @@
             id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
             customer_id INT(6) UNSIGNED,
             item_type TINYINT,
-            item_descriptors SET('a', 'b', 'c', 'd')
+            item_descriptors SET(".for($i=0;$i<30;$i++){echo "'$i',";}."'30')
             )";
     sql_query($con, $sql);
     
