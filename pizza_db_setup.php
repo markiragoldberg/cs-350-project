@@ -44,9 +44,9 @@
             )";
     sql_query($con, $sql);
     $sql = "INSERT INTO pizza_toppings (Topping) VALUES (
-            'small') ('medium') ('large') ('tomato_sauce') ('dressing') ('garlic_butter') 
-            ('hummus') ('olive_oil') ('bbq') ('ricotta') ('blue') ('feta') ('sausage') ('pepperoni') 
-            ('beef') ('ham') ('bacon') ('chicken') ('pineapple') ('onions') ";
+            'small'), ('medium'), ('large'), ('tomato_sauce'), ('dressing'), ('garlic_butter'), 
+            ('hummus'), ('olive_oil'), ('bbq'), ('ricotta'), ('blue'), ('feta'), ('sausage'), ('pepperoni'), 
+            ('beef'), ('ham'), ('bacon'), ('chicken'), ('pineapple'), ('onions') ";
     
     mysqli_close($con);
 ?>
