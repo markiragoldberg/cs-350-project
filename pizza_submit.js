@@ -30,5 +30,6 @@ document.getElementById("pizza_form").onsubmit = function() {
         }
     }
     xhr.open("POST", "order_pizza.php", true);
-    xhr.send(submit_string);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send("pizza=" + submit_string);
 };
