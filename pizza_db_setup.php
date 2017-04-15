@@ -37,5 +37,10 @@
             )";
     sql_query($con, $sql);
     
+    $sql = "CREATE TABLE pizza_toppings (
+            id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, Topping VARCHAR(30)
+            )";
+    sql_query($con, $sql);
+    
     mysqli_close($con);
 ?>
