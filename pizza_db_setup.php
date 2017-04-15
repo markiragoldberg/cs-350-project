@@ -19,6 +19,8 @@
     #Drop old tables if they exist
     sql_query($con, "DROP TABLE pizza_customers;");
     sql_query($con, "DROP TABLE pizza_items;");
+    sql_query($con, "DROP TABLE pizza_toppings;");
+    
 
     # Recreate tables to latest standards
     $sql = "CREATE TABLE pizza_customers (
@@ -36,6 +38,15 @@
             item_descriptors SET(".for($i=0;$i<30;$i++){echo "'$i',";}."'30')
             )";
     sql_query($con, $sql);
+    
+    $sql = "CREATE TABLE pizza_toppings (
+            id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, Topping VARCHAR(30)
+            )";
+    sql_query($con, $sql);
+    $sql = "INSERT INTO pizza_toppings (Topping) VALUES (
+            'small'), ('medium'), ('large'), ('tomato_sauce'), ('dressing'), ('garlic_butter'), 
+            ('hummus'), ('olive_oil'), ('bbq'), ('ricotta'), ('blue'), ('feta'), ('sausage'), ('pepperoni'), 
+            ('beef'), ('ham'), ('bacon'), ('chicken'), ('pineapple'), ('onions') ";
     
     mysqli_close($con);
 ?>
