@@ -26,11 +26,11 @@
     $sql = "CREATE TABLE pizza_customers (
             id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
             name VARCHAR(50),
-            phone VARCHAR(11),
-            credit_card VARCHAR(19)
+            phone VARCHAR(14),
+            credit_card VARCHAR(24)
             )";
     sql_query($con, $sql);
-    
+/*    
     $sql = "CREATE TABLE pizza_items (
             id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
             customer_id INT(6) UNSIGNED,
@@ -38,7 +38,7 @@
             item_descriptors SET(".for($i=0;$i<30;$i++){echo "'$i',";}."'30')
             )";
     sql_query($con, $sql);
-    
+*/    
     $sql = "CREATE TABLE pizza_toppings (
             id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, Topping VARCHAR(30)
             )";

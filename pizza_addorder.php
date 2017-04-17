@@ -19,7 +19,7 @@
     
     $name = "Tester";
     $phone = "1-555-333-4444";
-    $credit_card = "1111222233334444333";
+    $credit_card = "1111 2222 3333 4444 333";
     
     $item_type = 1; # pizza
     $item_descriptors = 'a,d'; # gotta talk to Kirk about this more
