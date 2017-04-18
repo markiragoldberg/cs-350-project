@@ -26,13 +26,14 @@
     
     $sql = "SELECT id from pizza_customers where phone='$phone'";
     $customerid = (sql_query($con, $sql));
-    $toppings = split (", ", $item);
-
-
-/*      switch ($toppings[0]{
+	
+    $toppings = explode(', ', $item);
+	echo $toppings[0];
+$i=1;
+      switch ($i){
          
-         case "pizza":
-
+         case 1:
+/*
     //section for inserting toppings into table
 
     $size = count($toppings);
@@ -43,33 +44,33 @@
     $set->add($nextTopping);
     }
     $itemtype = 0; echo ("working");
-         
+*/           echo $item;
          break;
-         case   "calzone":
+         case   'calzone':
          
          $itemtype = 1;
          break;
          
-         case   "salad":
+         case   'salad':
          
          $itemtype = 2;
          break;
          
-         case   "breadsticks":
+         case   'breadsticks':
          
          $itemtype = 3;
          break;
          
-         case   "drink":
+         case   'drink':
          
          $itemtype = 4;
          break;
          
          case default:
-	echo "error";
+	echo 'error';
          
-*/         
-         
+}   
+        
          
     $sql = "INSERT INTO pizza_items (customer_id, item_type, item_descriptors) VALUES ('$customerid', '$itemtype', '$set')";
     if($result=(sql_query($con, $sql))){
