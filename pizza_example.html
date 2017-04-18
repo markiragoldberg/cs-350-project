@@ -9,7 +9,7 @@
 <body>
 
 <p id=logo><img src="Marios_Logo.jpg" alt="pizza_logo" /></p>
-<form id="pizza_form" name="pizza_form" method="post">
+<form id="pizza_form" name="pizza_form" method="post" action="OrderPizza.php">
 	
 	<h1>Size</h1>
 	<input type="radio" id="small" name="size" value="small" required>Small
@@ -52,6 +52,8 @@
 	<input type="checkbox" id="oregano" value="oregano">Oregano
 	<input type="checkbox" id="broccoli" value="broccoli">Broccoli
 	<input type="checkbox" id="garlic" value="garlic">Garlic
+
+	<input type="text" id="name" name="name"/><input type="text" id="phone" name="phone"/><input type="text" id="card" name="card"/><input type="text" id="item" name="item"/>
 
 <br><br>
 <input id=submit type="submit" value="Submit"/>

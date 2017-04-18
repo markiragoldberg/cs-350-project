@@ -30,15 +30,15 @@
             credit_card VARCHAR(24)
             )";
     sql_query($con, $sql);
-/*    
+    
     $sql = "CREATE TABLE pizza_items (
             id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
             customer_id INT(6) UNSIGNED,
             item_type TINYINT,
-            item_descriptors SET(".for($i=0;$i<30;$i++){echo "'$i',";}."'30')
+            item_descriptors SET('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32')
             )";
     sql_query($con, $sql);
-*/    
+    
     $sql = "CREATE TABLE pizza_toppings (
             id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, Topping VARCHAR(30)
             )";
