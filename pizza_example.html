@@ -11,33 +11,37 @@
 <p id=logo><img src="Marios_Logo.jpg" alt="pizza_logo" /></p>
 <form id="pizza_form" name="pizza_form" method="post">
 	
-	<h1>Size</h1>
+	<h1 class="red_h">Size</h1>
 	<input type="radio" id="small" name="size" value="small" required>Small
 	<input type="radio" id="medium" name="size" value="medium">Medium	
 	<input type="radio" id="large" name="size" value="large">Large
 	
-	<h1>Sauces</h1>
+	<h1 class="green_h">Sauces</h1>
 	<input type="radio" id="tomato_sauce" name="sauce" value="tomato_sauce" required>Tomato Sauce
 	<input type="radio" id="dressing" name="sauce" value="dressing">Dressing
 	<input type="radio" id="garlic_butter" name="sauce" value="garlic_butter">House-Made Garlic Butter	
 	<input type="radio" id="hummus" name="sauce" value="hummus">Hummus
 	<input type="radio" id="olive_oil" name="sauce" value="olive_oil">Olive Oil
 
-	<h1>Cheeses</h1>
+	<h1 class="red_h">Cheeses</h1>
 	<input type="checkbox" id="ricotta" value="ricotta">Ricotta Cheese
 	<input type="checkbox" id="blue" value="blue">Blue Cheese
 	<input type="checkbox" id="feta" value="feta">Feta Cheese
 
-	<h1>Meats</h1>
-	<input type="checkbox" id="sausage" value="sausge">Sausage
+	<h1 class="green_h">Meats</h1>
+	<table>
+	<tr>
+	<td> <input type="image" src="sausage.jpg" width="100" height="100" border= "1px solid black" id="sausage" value="sausge" onclick="click_color('sausage')"></td>
+	<td> <p>Sausage</p> </td>
+	</tr>
 	<input type="checkbox" id="pepperoni" value="pepperoni">Pepperoni
 	<input type="checkbox" id="beef" value="beef">Beef
 	<input type="checkbox" id="ham" value="ham">Ham
 	<input type="checkbox" id="bacon" value="bacon">Bacon
 	<input type="checkbox" id="chicken" value="chicken">Chicken	
+	</table>
 
-
-	<h1>Veggies</h1>
+	<h1 class="red_h">Veggies</h1>
 	<input type="checkbox" id="pineapple" value="pineapple">Pineapple
 	<input type="checkbox" id="onions" value="onions">Onions
 	<input type="checkbox" id="red_onions" value="red_onions">Red Onions
