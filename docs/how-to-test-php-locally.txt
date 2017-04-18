@@ -1,0 +1,11 @@
+How to set up PHP server on your own computer so we can get debugging information when our PHP scripts don't work, and test our code without using lab machines
+
+1. Download XAMPP by googling "XAMPP" and clicking the first link. Install it by running the file. On linux you will have to enable the "execute" permission on the file before you can run it. If you don't know how to do that, google "enable execute permission linux". Accept default settings for any installation questions.
+
+2. Start the server. On linux, start the server by entering "sudo /opt/lampp/lampp start" and entering your system password if you have one. On Windows you can probably just hit the windows key and type "XAMPP", or maybe there's a desktop shortcut or something.
+
+3. Put your files in the right directory. On linux this is "/opt/lampp/htdocs", on Windows it's "C:\xampp\htdocs". On linux you will probably need to provide use sudo + the terminal or possibly provide your password to put things in the directory.
+
+4. Open a browser and type in "127.0.0.1" to go to the server and see if it's running. Add the name of your file (e.g. "127.0.0.1/pizza.php") to test it on your local server. If your php file is buggy then it will give you a more informative error than HTTP 500.
+
+
