@@ -18,65 +18,73 @@
     {
         die("Unable to connect to the database");
     }
-    echo "working";
+
 
     $sql = "INSERT INTO pizza_customers (name, phone, credit_card) VALUES ('$name', '$phone', '$card')";
-    $result = (sql_query($con, $sql));
+    $result = (mysqli_query($con, $sql));
     
     
     $sql = "SELECT id from pizza_customers where phone='$phone'";
-    $customerid = (sql_query($con, $sql));
-	
+    $customerid = (mysqli_query($con, $sql));
     $toppings = explode(', ', $item);
 	echo $toppings[0];
-$i=1;
-      switch ($i){
-         
-         case 1:
-/*
-    //section for inserting toppings into table
 
-    $size = count($toppings);
-   $set;
-    for ($i=1; i < $size; i++){
-    $sql = "SELECT id from pizza_toppings where Topping = '$toppings[$i]'";
-    $nextTopping = (sql_query($con, $sql));
-    $set->add($nextTopping);
-    }
-    $itemtype = 0; echo ("working");
-*/           echo $item;
-         break;
-         case   'calzone':
+      switch ($toppings[0]){
          
-         $itemtype = 1;
-         break;
+         case "pizza":
+
+    		//section for inserting toppings into table
+
+    		$size = count($toppings);
+   		echo $size;
+		$sql = "SELECT * from pizza_toppings where Topping = '$toppings[1]'";
+		$nextTopping = mysqli_fetch_assoc(mysqli_query($con, $sql));
+		$set = "('".$nextTopping["id"]."'";
+    		for ($i=2; $i < $size; $i++){
+    			$sql = "SELECT * from pizza_toppings where Topping = '$toppings[$i]'";
+			//echo $sql;
+    			$nextTopping = mysqli_fetch_assoc(mysqli_query($con, $sql));
+			$set.=",'".$nextTopping["id"]."'";
+    			//$set->add($nextTopping);
+			 
+		echo" ".$nextTopping["id"]." ";
+    		}
+		$set.=")";
+		echo$set;
+    		$itemtype = 0;
+           
+         	break;
+         case   "calzone":
          
-         case   'salad':
+         	$itemtype = 1;
+         	break;
          
-         $itemtype = 2;
-         break;
+         case   "salad":
          
-         case   'breadsticks':
+         	$itemtype = 2;
+         	break;
          
-         $itemtype = 3;
-         break;
+         case   "breadsticks":
          
-         case   'drink':
+         	$itemtype = 3;
+         	break;
          
-         $itemtype = 4;
-         break;
+         case   "drink":
          
-         case default:
-	echo 'error';
+         	$itemtype = 4;
+         	break;
+         
+         default:
+		echo "error";
          
 }   
         
          
-    $sql = "INSERT INTO pizza_items (customer_id, item_type, item_descriptors) VALUES ('$customerid', '$itemtype', '$set')";
-    if($result=(sql_query($con, $sql))){
-        
+    $sql = "INSERT INTO pizza_items (customer_id, item_type) VALUES ('$customerid', '$itemtype')";
+    if($result=(mysqli_query($con, $sql))){
+        echo "success";
     } else {
-    
+    	echo "failure";
     }
     mysqli_close($con);
     ?>
