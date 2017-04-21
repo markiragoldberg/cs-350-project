@@ -23,6 +23,8 @@ document.getElementById("pizza_form").onsubmit = function() {
         return;
     }
     console.log(submit_string);
+    document.getElementById("item").value = submit_string;
+    /*
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if(xhr.readystate == 4 && xhr.status == 200) {
@@ -32,4 +34,5 @@ document.getElementById("pizza_form").onsubmit = function() {
     xhr.open("POST", "order_pizza.php", true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send("pizza=" + submit_string);
+    */
 };
