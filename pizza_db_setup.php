@@ -50,6 +50,46 @@
             ('black_olives'), ('green_olives'), ('kalamata_olives'), ('mushrooms'), ('spinach'), ('banana_peppers'),
             ('bell_peppers'), ('oregano'), ('broccoli'), ('garlic')";
      sql_query($con, $sql);
+    $sql = "CREATE TABLE calzone_fillings (
+            id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, filling VARCHAR(30)
+            )";
+    sql_query($con, $sql);
+    $sql = "INSERT INTO calzone_fillings (filling) VALUES (
+            'tomato_sauce'), ('dressing'), ('ricotta'), ('blue'), ('feta'), ('sausage'), ('pepperoni'), 
+            ('beef'), ('ham'), ('bacon'), ('chicken'), ('pineapple'), ('onions'), ('red_onions'), ('tomatos'), 
+            ('black_olives'), ('green_olives'), ('kalamata_olives'), ('mushrooms'), ('spinach'), ('banana_peppers'),
+            ('bell_peppers'), ('oregano'), ('broccoli'), ('garlic')";
+     sql_query($con, $sql);
+    $sql = "CREATE TABLE appetizers (
+            id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, appetizer VARCHAR(30)
+            )";
+    sql_query($con, $sql);
+    $sql = "INSERT INTO appetizers (appetizer) VALUES (
+            'breadstix'), ('cheesestix'), ('pepperonistix'), ('meatstix'), ('veggiestix'), ('garlicbread')";
+     sql_query($con, $sql);
+    $sql = "CREATE TABLE salads (
+            id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, salad VARCHAR(30)
+            )";
+    sql_query($con, $sql);
+    $sql = "INSERT INTO salads (salad) VALUES (
+            'house'), ('combo'), ('mediterranean'), ('blt')";
+     sql_query($con, $sql);
+    $sql = "CREATE TABLE subs (
+            id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, sub VARCHAR(30)
+            )";
+    sql_query($con, $sql);
+    $sql = "INSERT INTO subs (sub) VALUES (
+            'italiansub'), ('pizzasub')";
+     sql_query($con, $sql);
+    $sql = "CREATE TABLE drinks (
+            id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, drink VARCHAR(30)
+            )";
+    sql_query($con, $sql);
+    $sql = "INSERT INTO drinks (drink) VALUES (
+            'pepsi'), ('dietpepsi'), ('mountaindew'), ('tropicanapinklemonade'), ('drpepper'), ('7up'), ('sweettea'), 
+            ('tea'), ('ski'), ('rummy'), ('orange'), ('gingerale'), ('ibcrootbeer'), ('sanpellegrino'), ('decafcoffee'), 
+            ('coffee'), ('hottea')";
+     sql_query($con, $sql);
     
     mysqli_close($con);
 ?>
