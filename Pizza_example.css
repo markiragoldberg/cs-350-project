@@ -29,20 +29,11 @@ padding: 10px;
 box-shadow: 5px 5px black;
 }
 
-table.courses, th.courses, td.courses
+.food_pic
 {
-border: 1px solid black;
-border-collapse: collapse;
-}
-
-th.courses,td.courses
-{
-padding: 5px;
-}
-
-th.courses
-{
-text-align: left;
+width: 75px; 
+height: 75px;
+border: 3px solid black;
 }
 
 h2
@@ -65,22 +56,4 @@ padding: 10px;
 #logo
 {
 text-align: left;
-}
-
-p
-{
-font-family: Verdana;
-font-weight: bold;
-text-align: center;
-}
-
-#bio
-{
-font-family: Verdana;
-font-weight: bold;
-}
-
-#video
-{
-text-align: center;
 }

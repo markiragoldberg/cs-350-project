@@ -36,8 +36,8 @@ document.getElementById("pizza_form").onsubmit = function() {
 
 function click_color(id){
 	var target = document.getElementById(id);
-	if (target.style.border == "1px solid black")
-		target.style.border = "1px solid red";
+	if (target.style.border == "3px solid black")
+		target.style.border = "3px solid red";
 	else
-		target.style.border = "1px solid black";
+		target.style.border = "3px solid black";
 }

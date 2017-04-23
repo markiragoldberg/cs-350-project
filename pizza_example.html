@@ -8,7 +8,7 @@
 
 <body>
 
-<p id=logo><img src="Marios_Logo.jpg" alt="pizza_logo" /></p>
+<p id=logo><img src="Marios_Logo.jpg" alt="pizza_logo"/></p>
 <form id="pizza_form" name="pizza_form" method="post">
 	
 	<h1 class="red_h">Size</h1>
@@ -24,39 +24,88 @@
 	<input type="radio" id="olive_oil" name="sauce" value="olive_oil">Olive Oil
 
 	<h1 class="red_h">Cheeses</h1>
-	<input type="checkbox" id="ricotta" value="ricotta">Ricotta Cheese
-	<input type="checkbox" id="blue" value="blue">Blue Cheese
-	<input type="checkbox" id="feta" value="feta">Feta Cheese
-
+	<table>
+		<tr>
+	<input class="food_pic" type="image" src="ricotta_cheese.jpg" id="ricotta" value="ricotta" onclick="click_color('ricotta')">Ricotta Cheese
+	<input class="food_pic" type="image" src="blue_cheese.png" id="blue" value="blue" onclick="click_color('blue')">Blue Cheese
+	<input class="food_pic" type="image" src="feta_cheese.jpg" id="feta" value="feta" onclick="click_color('feta')">Feta Cheese
+		</tr>
+	</table>
+	
 	<h1 class="green_h">Meats</h1>
 	<table>
-	<tr>
-	<td> <input type="image" src="sausage.jpg" width="100" height="100" border= "1px solid black" id="sausage" value="sausge" onclick="click_color('sausage')"></td>
-	<td> <p>Sausage</p> </td>
-	</tr>
-	<input type="checkbox" id="pepperoni" value="pepperoni">Pepperoni
-	<input type="checkbox" id="beef" value="beef">Beef
-	<input type="checkbox" id="ham" value="ham">Ham
-	<input type="checkbox" id="bacon" value="bacon">Bacon
-	<input type="checkbox" id="chicken" value="chicken">Chicken	
+		<tr>
+			<td> <input class="food_pic" type="image" src="sausage.jpg" id="sausage" value="sausge" onclick="click_color('sausage')"></td>
+			<td> <p>Sausage</p> </td>
+	
+			<td><input  class="food_pic" type="image"  src ="pepperoni.jpg"  id="pepperoni" value="pepperoni" onclick="click_color('pepperoni')"></td>
+			<td> <p>Pepperoni</p> </td>
+	
+			<td><input class="food_pic" type="image" src="beef.jpg" id="beef" value="beef" onclick="click_color('beef')"></td>
+			<td> <p>Beef</p> </td>
+	
+	
+			<td><input  class="food_pic" type="image" src="ham.jpg" id="ham" value="ham" onclick="click_color('ham')" ></td>
+			<td> <p>Ham</p></td>
+	
+			<td><input  class="food_pic" type="image" src="bacon.jpg" id="bacon" value="bacon" onclick="click_color('bacon')"></td>
+			<td> <p>Bacon</p> </td>
+	
+			<td><input class="food_pic" type="image" src="chicken.jpg" id="chicken" value="chicken" onclick="click_color('chicken')"> </td>
+			<td> <p>Chicken</p> </td>
+
+		</tr>
 	</table>
 
 	<h1 class="red_h">Veggies</h1>
-	<input type="checkbox" id="pineapple" value="pineapple">Pineapple
-	<input type="checkbox" id="onions" value="onions">Onions
-	<input type="checkbox" id="red_onions" value="red_onions">Red Onions
-	<input type="checkbox" id="tomatoes" value="tomatoes">Tomatoes
-	<input type="checkbox" id="black_olives" value="black_olives">Black Olives
-	<input type="checkbox" id="green_olives" value="green_olives">Green Olives
-	<input type="checkbox" id="kalamata_olives" value="kalamata_olives">Kalamata Olives
-	<input type="checkbox" id="mushrooms" value="mushrooms">Fresh Mushrooms
-	<input type="checkbox" id="spinach" value="spinach">Fresh Spinach	
-	<input type="checkbox" id="banana_peppers" value="banana_peppers">Banana Peppers
-	<input type="checkbox" id="bell_peppers" value="bell_peppers">Bell Peppers
-	<input type="checkbox" id="oregano" value="oregano">Oregano
-	<input type="checkbox" id="broccoli" value="broccoli">Broccoli
-	<input type="checkbox" id="garlic" value="garlic">Garlic
-
+	<table>
+		<tr>
+			
+			<td><input class="food_pic" type="image" src="pineapple.jpg" id="pineapple" value="pineapple" onclick="click_color('pineapple')"></td>
+			<td> <p>Pinapple</P> </td>
+			
+			<td><input class="food_pic" type="image" src="onion.png" id="onions" value="onions" onclick="click_color('onions')"></td>
+			<td> <p>Onions</p> </td>
+			
+			<td><input class="food_pic" type="image" src="red_onion.png" id="red_onions" value="red_onions" onclick="click_color('red_onions')"></td>
+			<td> <p>Red Onions</p> </td>
+			
+			<td><input class="food_pic" type="image" src="tomatoes.png" id="tomatoes" value="tomatoes" onclick="click_color('tomatoes')"></td>
+			<td> <p>Tomatoes</p> </td>
+			
+			<td><input class="food_pic" type="image" src="black_olives.jpg" id="black_olives" value="black_olives" onclick="click_color('black_olives')"></td>
+			<td> <p>Black Olives</p> </td>
+			
+			<td><input class="food_pic" type="image" src="green_olives.jpg" id="green_olives" value="green_olives" onclick="click_color('green_olives')"></td>
+			<td> <p>Green Olives</p> </td>
+			
+			<td><input class="food_pic" type="image" src="kalamata_olives.jpg" id="kalamata_olives" value="kalamata_olives" onclick="click_color('kalamata_olives')"></td>
+			<td> <p>Kalamata Olives</p> </td>
+		</tr>
+		
+		<tr>
+			<td><input class="food_pic" type="image" src="mushrooms.jpg" id="mushrooms" value="mushrooms" onclick="click_color('mushrooms')"></td>
+			<td> <p>Mushrooms</p> </td>
+			
+			<td><input class="food_pic" type="image" src="spinach.jpg" id="spinach" value="spinach" onclick="click_color('spinach')"></td>
+			<td> <p>Spinach</p>
+			
+			<td><input class="food_pic" type="image" src="banana_peppers.jpg" id="banana_peppers" value="banana_peppers" onclick="click_color('banana_peppers')"></td>
+			<td> <p>Banana Peppers</p> </td>
+			
+			<td><input class="food_pic" type="image" src="bell_peppers.jpg" id="bell_peppers" value="bell_peppers" onclick="click_color('bell_peppers')"></td>
+			<td> <p>Bell Peppers</p> </td>
+			
+			<td><input class="food_pic" type="image" src="oregano.jpg" id="oregano" value="oregano" onclick="click_color('oregano')"></td>
+			<td> <p>Oregano</p> </td>
+			
+			<td><input class="food_pic" type="image" src="broccoli.jpg" id="broccoli" value="broccoli" onclick="click_color('broccoli')"></td>
+			<td> <p>Broccoli</p> </td>
+			
+			<td><input class="food_pic" type="image" src="garlic.jpg" id="garlic" value="garlic" onclick="click_color('garlic')"></td>
+			<td> <p>Garlic</p> </td>
+		</tr>
+	</table>
 <br><br>
 <input id=submit type="submit" value="Submit"/>
 
