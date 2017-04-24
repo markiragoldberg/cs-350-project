@@ -25,9 +25,12 @@
 	<h1 class="red_h">Cheeses</h1>
 	<table>
 		<tr>
-	<input class="food_pic" type="image" src="ricotta_cheese.jpg" id="ricotta" value="ricotta" onclick="click_color('ricotta')">Ricotta Cheese
-	<input class="food_pic" type="image" src="blue_cheese.png" id="blue" value="blue" onclick="click_color('blue')">Blue Cheese
-	<input class="food_pic" type="image" src="feta_cheese.jpg" id="feta" value="feta" onclick="click_color('feta')">Feta Cheese
+            <!-- This is how it's done -->
+            <label for="ricotta"><img class="food_pic" src="ricotta_cheese.jpg" onclick="click_color(this);"></label>
+            <input type="checkbox" class="image_checkbox" id="ricotta" value="ricotta">Ricotta Cheese
+            
+            <input class="food_pic" type="image" src="blue_cheese.png" id="blue" value="blue" onclick="click_color('blue')">Blue Cheese
+            <input class="food_pic" type="image" src="feta_cheese.jpg" id="feta" value="feta" onclick="click_color('feta')">Feta Cheese
 		</tr>
 	</table>
 	

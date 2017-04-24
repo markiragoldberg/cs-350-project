@@ -29,6 +29,10 @@ padding: 10px;
 box-shadow: 5px 5px black;
 }
 
+input.image_checkbox {
+display: none;
+}
+
 .food_pic
 {
 width: 75px; 
