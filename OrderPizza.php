@@ -39,9 +39,10 @@
     
 	
     $toppings = explode(', ', $item);
-    $i=1;
-    switch ($i) {
-        case 1:
+    
+    // switch on item type, the first entry in toppings
+    switch ($toppings[0]) {
+        case 'pizza':
             //section for inserting toppings into table
             $size = count($toppings);
             $set = '';
@@ -58,16 +59,16 @@
             }
             $itemtype = 0;
             break;
-        case   'calzone':
+        case 'calzone':
             $itemtype = 1;
             break;
-        case   'salad':
+        case 'salad':
             $itemtype = 2;
             break;
-        case   'breadsticks':
+        case 'breadsticks':
             $itemtype = 3;
             break;
-        case   'drink':
+        case 'drink':
             $itemtype = 4;
             break;
         default:
@@ -81,9 +82,9 @@
     $sql = "INSERT INTO pizza_items (customer_id, item_type, item_descriptors) VALUES ('$customerid', '$itemtype', '$set')";
 
     if($result=(sql_query($con, $sql))){
-        
+        echo "success";
     } else {
-    
+    	echo "failure";
     }
     mysqli_close($con);
 ?>
