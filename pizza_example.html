@@ -7,10 +7,9 @@
 </head>
 
 <body>
-
-<p id=logo><img src="Marios_Logo.jpg" alt="pizza_logo"/></p>
-<form id="pizza_form" name="pizza_form" method="post">
-	
+  
+<p id=logo><img src="Marios_Logo.jpg" alt="pizza_logo" /></p>
+<form id="pizza_form" name="pizza_form" method="post" action="OrderPizza.php">	
 	<h1 class="red_h">Size</h1>
 	<input type="radio" id="small" name="size" value="small" required>Small
 	<input type="radio" id="medium" name="size" value="medium">Medium	
@@ -53,7 +52,6 @@
 	
 			<td><input class="food_pic" type="image" src="chicken.jpg" id="chicken" value="chicken" onclick="click_color('chicken')"> </td>
 			<td> <p>Chicken</p> </td>
-
 		</tr>
 	</table>
 
@@ -62,7 +60,7 @@
 		<tr>
 			
 			<td><input class="food_pic" type="image" src="pineapple.jpg" id="pineapple" value="pineapple" onclick="click_color('pineapple')"></td>
-			<td> <p>Pinapple</P> </td>
+			<td> <p>Pinapple</p> </td>
 			
 			<td><input class="food_pic" type="image" src="onion.png" id="onions" value="onions" onclick="click_color('onions')"></td>
 			<td> <p>Onions</p> </td>
@@ -107,6 +105,12 @@
 		</tr>
 	</table>
 <br><br>
+    
+<br/>
+Name: <input type="text" id="name" name="name"/><br/>
+Phone: <input type="text" id="phone" name="phone"/><br/>
+Credit Card: <input type="text" id="card" name="card"/><br/>
+<input type="text" id="item" name="item"/><br/>
 <input id=submit type="submit" value="Submit"/>
 
 <script type="text/javascript" src="pizza_submit.js"></script>

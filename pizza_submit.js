@@ -22,7 +22,9 @@ document.getElementById("pizza_form").onsubmit = function() {
     if(size != 1 || sauce != 1) {
         return;
     }
-    
+    console.log(submit_string);
+    document.getElementById("item").value = submit_string;
+    /*
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if(xhr.readystate == 4 && xhr.status == 200) {
@@ -30,8 +32,9 @@ document.getElementById("pizza_form").onsubmit = function() {
         }
     }
     xhr.open("POST", "order_pizza.php", true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send("pizza=" + submit_string);
+    */
 };
 
 function click_color(id){
