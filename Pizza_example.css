@@ -11,29 +11,29 @@ padding: 10px;
 font-family: Verdana;
 }
 
-h1
+.red_h
 {
-background-color: #660000;
+background-color: #990000;
 color: white;
 text-align: center;
 padding: 10px;
 box-shadow: 5px 5px black;
 }
 
-table.courses, th.courses, td.courses
+.green_h
 {
-border: 1px solid black;
-border-collapse: collapse;
+background-color: #006600;
+color: white;
+text-align: center;
+padding: 10px;
+box-shadow: 5px 5px black;
 }
 
-th.courses,td.courses
+.food_pic
 {
-padding: 5px;
-}
-
-th.courses
-{
-text-align: left;
+width: 75px; 
+height: 75px;
+border: 3px solid black;
 }
 
 h2
@@ -56,26 +56,4 @@ padding: 10px;
 #logo
 {
 text-align: left;
-}
-
-p
-{
-font-family: Verdana;
-font-weight: bold;
-text-align: center;
-}
-
-#item {
-    display: none;
-}
-
-#bio
-{
-font-family: Verdana;
-font-weight: bold;
-}
-
-#video
-{
-text-align: center;
 }
