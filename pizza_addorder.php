@@ -19,7 +19,7 @@
     
     $name = "Tester";
     $phone = "1-555-333-4444";
-    $credit_card = "1111222233334444333";
+    $credit_card = "1111 2222 3333 4444 333";
     
     $item_type = 1; # pizza
     $item_descriptors = 'a,d'; # gotta talk to Kirk about this more
@@ -28,7 +28,7 @@
     sql_query($con, "INSERT INTO pizza_customers (name, phone, credit_card) VALUES ('$name', '$phone', '$credit_card')");
     
     # ... get autoincremented ID of customer we just inserted!
-    $customer_id = mysql_insert_id();
+    $customer_id = mysqli_insert_id($con);
     
     sql_query($con,"INSERT INTO pizza_items (customer_id, item_type, item_descriptors) VALUES ('$customer_id', '$item_type', '$item_descriptors')");
     

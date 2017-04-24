@@ -65,6 +65,10 @@ font-weight: bold;
 text-align: center;
 }
 
+#item {
+    display: none;
+}
+
 #bio
 {
 font-family: Verdana;
