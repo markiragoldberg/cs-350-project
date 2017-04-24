@@ -46,7 +46,7 @@
     $sql = "INSERT INTO pizza_toppings (Topping) VALUES (
             'small'), ('medium'), ('large'), ('tomato_sauce'), ('dressing'), ('garlic_butter'), 
             ('hummus'), ('olive_oil'), ('bbq'), ('ricotta'), ('blue'), ('feta'), ('sausage'), ('pepperoni'), 
-            ('beef'), ('ham'), ('bacon'), ('chicken'), ('pineapple'), ('onions'), ('red_onions'), ('tomatos'), 
+            ('beef'), ('ham'), ('bacon'), ('chicken'), ('pineapple'), ('onions'), ('red_onions'), ('tomatoes'), 
             ('black_olives'), ('green_olives'), ('kalamata_olives'), ('mushrooms'), ('spinach'), ('banana_peppers'),
             ('bell_peppers'), ('oregano'), ('broccoli'), ('garlic')";
      sql_query($con, $sql);
