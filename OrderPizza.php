@@ -60,16 +60,90 @@
             $itemtype = 0;
             break;
         case 'calzone':
+		     //section for inserting toppings into table
+            $size = count($toppings);
+            $set = '';
+            //skip item type (0)
+            for ($j=1; $j < $size; $j++) {
+                $sql = "SELECT id from calzone_fillings where filling = '$toppings[$j]'";
+                $nextTopping = sql_query($con, $sql);
+                $nextTopping = mysqli_fetch_array($nextTopping);
+                if($j != 1) {
+                    $set = $set . ',';
+                }
+                $set = $set . $nextTopping[0];
+                echo $set . "<br/>";
+            }
             $itemtype = 1;
             break;
         case 'salad':
+		     //section for inserting toppings into table
+            $size = count($toppings);
+            $set = '';
+            //skip item type (0)
+            for ($j=1; $j < $size; $j++) {
+                $sql = "SELECT id from salads where salad = '$toppings[$j]'";
+                $nextTopping = sql_query($con, $sql);
+                $nextTopping = mysqli_fetch_array($nextTopping);
+                if($j != 1) {
+                    $set = $set . ',';
+                }
+                $set = $set . $nextTopping[0];
+                echo $set . "<br/>";
+            }
             $itemtype = 2;
             break;
         case 'breadsticks':
+		     //section for inserting toppings into table
+            $size = count($toppings);
+            $set = '';
+            //skip item type (0)
+            for ($j=1; $j < $size; $j++) {
+                $sql = "SELECT id from appetizers where appetizer = '$toppings[$j]'";
+                $nextTopping = sql_query($con, $sql);
+                $nextTopping = mysqli_fetch_array($nextTopping);
+                if($j != 1) {
+                    $set = $set . ',';
+                }
+                $set = $set . $nextTopping[0];
+                echo $set . "<br/>";
+            }
             $itemtype = 3;
             break;
         case 'drink':
+		  //section for inserting toppings into table
+            $size = count($toppings);
+            $set = '';
+            //skip item type (0)
+            for ($j=1; $j < $size; $j++) {
+                $sql = "SELECT id from drinks where drink = '$toppings[$j]'";
+                $nextTopping = sql_query($con, $sql);
+                $nextTopping = mysqli_fetch_array($nextTopping);
+                if($j != 1) {
+                    $set = $set . ',';
+                }
+                $set = $set . $nextTopping[0];
+                echo $set . "<br/>";
+            }   
             $itemtype = 4;
+            break;
+	
+	    case 'sub':
+		  //section for inserting toppings into table
+            $size = count($toppings);
+            $set = '';
+            //skip item type (0)
+            for ($j=1; $j < $size; $j++) {
+                $sql = "SELECT id from subs where sub = '$toppings[$j]'";
+                $nextTopping = sql_query($con, $sql);
+                $nextTopping = mysqli_fetch_array($nextTopping);
+                if($j != 1) {
+                    $set = $set . ',';
+                }
+                $set = $set . $nextTopping[0];
+                echo $set . "<br/>";
+            }   
+            $itemtype = 5;
             break;
         default:
             echo 'error: unrecognized item <br/>';
