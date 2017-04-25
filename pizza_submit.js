@@ -36,3 +36,10 @@ document.getElementById("pizza_form").onsubmit = function() {
     xhr.send("pizza=" + submit_string);
     */
 };
+
+function click_color(target){
+	if (target.style.border == "3px solid red")
+		target.style.border = "3px solid black";
+	else
+		target.style.border = "3px solid red";
+}

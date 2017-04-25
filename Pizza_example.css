@@ -31,7 +31,11 @@ th.courses,td.courses
 padding: 5px;
 }
 
-th.courses
+input.image_checkbox {
+display: none;
+}
+
+.food_pic
 {
 text-align: left;
 }
