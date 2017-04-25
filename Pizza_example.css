@@ -11,22 +11,24 @@ padding: 10px;
 font-family: Verdana;
 }
 
-.red_h
+h1
 {
-background-color: #990000;
+background-color: #660000;
 color: white;
 text-align: center;
 padding: 10px;
 box-shadow: 5px 5px black;
 }
 
-.green_h
+table.courses, th.courses, td.courses
 {
-background-color: #006600;
-color: white;
-text-align: center;
-padding: 10px;
-box-shadow: 5px 5px black;
+border: 1px solid black;
+border-collapse: collapse;
+}
+
+th.courses,td.courses
+{
+padding: 5px;
 }
 
 input.image_checkbox {
@@ -35,9 +37,7 @@ display: none;
 
 .food_pic
 {
-width: 75px; 
-height: 75px;
-border: 3px solid black;
+text-align: left;
 }
 
 h2
@@ -60,4 +60,26 @@ padding: 10px;
 #logo
 {
 text-align: left;
+}
+
+p
+{
+font-family: Verdana;
+font-weight: bold;
+text-align: center;
+}
+
+#item {
+    display: none;
+}
+
+#bio
+{
+font-family: Verdana;
+font-weight: bold;
+}
+
+#video
+{
+text-align: center;
 }
