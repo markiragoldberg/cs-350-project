@@ -37,7 +37,9 @@ display: none;
 
 .food_pic
 {
-text-align: left;
+width: 75px; 
+height: 75px;
+border: 3px solid black;
 }
 
 h2
