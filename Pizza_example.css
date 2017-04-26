@@ -11,28 +11,22 @@ padding: 10px;
 font-family: Verdana;
 }
 
-h1
+.red_h
 {
-background-color: #660000;
+background-color: #990000;
 color: white;
 text-align: center;
 padding: 10px;
 box-shadow: 5px 5px black;
 }
 
-table.courses, th.courses, td.courses
+.green_h
 {
-border: 1px solid black;
-border-collapse: collapse;
-}
-
-th.courses,td.courses
-{
-padding: 5px;
-}
-
-input.image_checkbox {
-display: none;
+background-color: #006600;
+color: white;
+text-align: center;
+padding: 10px;
+box-shadow: 5px 5px black;
 }
 
 .food_pic
@@ -64,24 +58,7 @@ padding: 10px;
 text-align: left;
 }
 
-p
-{
-font-family: Verdana;
-font-weight: bold;
-text-align: center;
-}
-
 #item {
     display: none;
 }
 
-#bio
-{
-font-family: Verdana;
-font-weight: bold;
-}
-
-#video
-{
-text-align: center;
-}
