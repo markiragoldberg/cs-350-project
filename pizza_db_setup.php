@@ -78,7 +78,12 @@
             )";
     sql_query($con, $sql);
     $sql = "INSERT INTO salad_descriptors (name) VALUES 
-            ('house'), ('combo'), ('mediterranean'), ('blt')";
+            ('house'), ('combo'), ('mediterranean'), ('blt'),
+            ('mozzarella'), ('feta'),
+            ('pepperoni'), ('ham'), ('bacon'),
+            ('onions'), ('red_onions'), ('tomatoes'), 
+            ('black_olives'), ('green_olives'), ('kalamata_olives'),
+            ('bell_peppers'), ('croutons')";
      sql_query($con, $sql);
   /*  $sql = "CREATE TABLE subs (
             id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, sub VARCHAR(30)
