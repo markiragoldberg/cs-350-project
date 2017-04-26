@@ -9,10 +9,15 @@
 <body>
 
 <p id=logo><img src="Marios_Logo.jpg" alt="pizza_logo"/></p>
-<form id="salad_form" name="salad_form" method="post">
+<form id="salad_form" name="salad_form" method="post" action="OrderPizza.php">
 	
+	<h1 class="red_h">Choose Your Salad!</h1>
+	<input type="radio" id="house" name="type" value="type" required>House
+	<input type="radio" id="combo" name="type" value="type">Combo
+	<input type="radio" id="mediterranean" name="type" value="type">Mediterranean
+	<input type="radio" id="blt" name="type" value="type">BLT
 
-	<h1 class="green_h">Choose Your Salad Toppings!</h1>
+	<h1 class="green_h">Add Extra Toppings!</h1>
 	<input type="checkbox" id="bell_peppers" name="bell_peppers" value="bell_peppers">Bell Peppers
 	<input type="checkbox" id="onions" name="onions" value="onions">Onions
 	<input type="checkbox" id="black_olives" name="black_olives" value="black_olives">Black Olives
@@ -28,11 +33,16 @@
 	<input type="checkbox" id="croutons" name="croutons" value="crotouns">Croutons
 	
 <h3 class="red_h"> All Salads Are Served With Our House Dressing!</h3>
+    <br/>
+	Name: <input type="text" id="name" name="name"/><br/>
+    Phone: <input type="text" id="phone" name="phone"/><br/>
+    Credit Card: <input type="text" id="card" name="card"/><br/>
+    <input type="text" id="item" name="item"/><br/>
 
 <br><br>
 <input id=submit type="submit" value="Submit"/>
 
-<script type="text/javascript" src="pizza_submit.js"></script>
+<script type="text/javascript" src="salad_submit.js"></script>
 
 </form>
 		
