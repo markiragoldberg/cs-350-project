@@ -13,9 +13,9 @@
     $phone = $_POST["phone"];
     $card = $_POST["card"];
     $servername = "dbserv.cs.siu.edu";
-    $username = "mgoldberg";
-    $password = "Eu7BugDf";
-    $dbname = "mgoldberg";
+    $username = "cleidner";
+    $password = "yNQ8M2uh";
+    $dbname = "cleidner";
     $con = mysqli_connect($servername, $username, $password, $dbname);
     if(!$con)
     {

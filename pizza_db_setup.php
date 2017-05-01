@@ -7,9 +7,9 @@
 
 
     $servername = "dbserv.cs.siu.edu";
-    $username = "mgoldberg";
-    $password = "Eu7BugDf";
-    $dbname = "mgoldberg";
+    $username = "cleidner";
+    $password = "yNQ8M2uh";
+    $dbname = "cleidner";
     $con = mysqli_connect($servername, $username, $password, $dbname);
     if(!$con)
     {
@@ -20,6 +20,11 @@
     sql_query($con, "DROP TABLE pizza_customers;");
     sql_query($con, "DROP TABLE pizza_items;");
     sql_query($con, "DROP TABLE pizza_toppings;");
+    sql_query($con, "DROP TABLE calzone_fillings;");
+    sql_query($con, "DROP TABLE appetizers;");
+    sql_query($con, "DROP TABLE salads;");
+    sql_query($con, "DROP TABLE subs;");
+    sql_query($con, "DROP TABLE drinks;");
     
 
     # Recreate tables to latest standards
