@@ -38,8 +38,8 @@ document.getElementById("pizza_form").onsubmit = function() {
 };
 
 function click_color(target){
-	if (target.style.border == "3px solid red")
-		target.style.border = "3px solid black";
+	if (target.style.border == "5px solid green")
+		target.style.border = "5px solid white";
 	else
-		target.style.border = "3px solid red";
+		target.style.border = "5px solid green";
 }
