@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-	<title>Pizza Example</title>
+	<title>Mario's Pizza</title>
 	<link rel="stylesheet" type="text/css" href="pizza.css">
 </head>
 
