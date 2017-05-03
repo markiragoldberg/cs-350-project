@@ -27,19 +27,19 @@
     <table>
         <tr>
             <td>Name:</td>
-            <td><input type="text" id="name" name="name"/></td>
+            <td><input type="text" id="name" name="name" required /></td>
         </tr>
         <tr>
             <td>Phone:</td>
-            <td><input type="text" id="phone" name="phone"/></td>
+            <td><input type="text" id="phone" name="phone" required /></td>
         </tr>
         <tr>
             <td>Credit Card:</td>
-            <td><input type="text" id="card" name="card"/></td>
+            <td><input type="text" id="card" name="card" required /></td>
         </tr>
         <tr>
             <td>Card Security Code:</td>
-            <td><input type="text" id="ccSec" name="ccSec"/></td>
+            <td><input type="text" id="ccSec" name="ccSec" required /></td>
         </tr>
     </table>
     <input type="text" id="item" name="item"/><br/>
