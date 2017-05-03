@@ -1,4 +1,8 @@
 <?php
+	$itemid = $_GET["pizza"];
+	$itemtype = $_GET["item"];
+	$operator = $_GET["direction"];
+
     function sql_query($con, $sql) {
         $result = mysqli_query($con, $sql);
         if(!$result) {
@@ -11,42 +15,47 @@
     $username = "cleidner";
     $password = "yNQ8M2uh";
     $dbname = "cleidner";
-    $customerid=1;
     $con = mysqli_connect($servername, $username, $password, $dbname);
     if(!$con)
     {
         die("Unable to connect to the database");
     }
-    
-    $sql = "SELECT * FROM pizza_items WHERE customer_id = '$customerid'";
-    $result = (sql_query($con, $sql));
-    $order = (mysqli_fetch_assoc($result));
+    if ($operator=="<"){
+	$scention= "DESC";
+	} else {
+	$scention= "";
+	}
 
+    $sql = "SELECT * FROM pizza_items WHERE id $operator '$itemid' && item_type = '$itemtype' Order By id $scention LIMIT 1";
+    $result = (sql_query($con, $sql));
+    if (mysqli_num_rows($result) <1){
+	$sql = "SELECT * FROM pizza_items WHERE id = '$itemid'";
+	$result = (sql_query($con, $sql));
+	}
+    $order = (mysqli_fetch_assoc($result));
+	
     $type= $order["item_type"];
     switch ($type) {
     case 0:
     	$inputType="pizza_descriptors";
-    	$itemType="Pizza:";
     break;
 
     case 1:
     	$inputType="calzone_descriptors";
-    	$itemType="Calzone:";
     break;
 
     case 2:
     	$inputType="salad_descriptors";
-    	$itemType="Salads:";
     break;
 
     case 3:
     	$inputType="drink_descriptors";
-    	$itemType="Drinks:";
     break;
 
     }
+
     $pizza = $order["item_descriptors"];
-    
+
     $pizza=explode(',', $pizza);
     $capacity = sizeof($pizza);
     $toppingid = $pizza[0];
@@ -63,10 +72,8 @@
       $topping = $topping.", ";
       $topping = $topping.($nextTopping[0]);
     }
-     
-    echo $itemType.$topping;
-    
-    
-   mysqli_close($con);
-    
-    ?>
+	$topping = $topping.".".$order["id"];
+    print $topping;
+?>
+
+
