@@ -80,7 +80,7 @@
             <td><label for="red_onions"><img class="food_pic" src="red_onion.png" onclick="click_color(this);"></label>
             <input type="checkbox" class="image_checkbox" id="red_onions" value="red_onions">Red Onions</td>
             <td><label for="tomatoes"><img class="food_pic" src="tomatoes.png" onclick="click_color(this);"></label>
-            <input type="checkbox" class="image_checkbox" id="pineapple" value="pineapple">Tomatoes</td>
+            <input type="checkbox" class="image_checkbox" id="tomatoes" value="tomatoes">Tomatoes</td>
             <td><label for="black_olives"><img class="food_pic" src="black_olives.jpg" onclick="click_color(this);"></label>
             <input type="checkbox" class="image_checkbox" id="black_olives" value="black_olives">Black Olives</td>
             <td><label for="green_olives"><img class="food_pic" src="green_olives.jpg" onclick="click_color(this);"></label>
