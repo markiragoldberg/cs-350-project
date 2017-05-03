@@ -18,7 +18,7 @@
     //Get customer info
     $name = $_POST["name"];
     $phone = $_POST["phone"];
-    $card = hash('md5', $_POST["card"]);
+    $card = hash('md5', $_POST["card"] . $_POST["ccSec"]);
     
     $servername = "dbserv.cs.siu.edu";
     $username = "mgoldberg";
