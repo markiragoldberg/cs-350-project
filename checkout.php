@@ -10,6 +10,7 @@
 
 <p id=logo><img src="Marios_Logo.jpg" alt="pizza_logo" /></p>
 
+<h3 class="red_h">Your Order</h3>
 <?php
     session_start();
     
@@ -23,6 +24,7 @@
     }
 ?>
 <br/>
+<h3 class="green_h">Payment info</h3>
 <form method='post' action='OrderPizza.php'>
     <table>
         <tr>
