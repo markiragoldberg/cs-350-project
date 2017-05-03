@@ -30,7 +30,7 @@
             id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
             name VARCHAR(50),
             phone VARCHAR(14),
-            credit_card VARCHAR(24)
+            credit_card VARCHAR(32)
             )";
     sql_query($con, $sql);
     
