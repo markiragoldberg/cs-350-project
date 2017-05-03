@@ -37,11 +37,17 @@
             <td>Credit Card:</td>
             <td><input type="text" id="card" name="card"/></td>
         </tr>
+        <tr>
+            <td>Card Security Code:</td>
+            <td><input type="text" id="ccSec" name="ccSec"/></td>
+        </tr>
     </table>
     <input type="text" id="item" name="item"/><br/>
     <input type="submit" value="Confirm Order"/>
     <input type="button" onclick="location.href='clear_cart.php';" value="Clear Your Cart"/>
 </form>
+
+<script type="text/javascript" src="checkout.js"></script>
 
 </body>
 </html>

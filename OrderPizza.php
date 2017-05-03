@@ -35,7 +35,7 @@
     echo "card = " . $card . "<br/>";
 
     // Get existing customer's id
-    $sql = "SELECT id from pizza_customers where card='$card'";
+    $sql = "SELECT id from pizza_customers where credit_card='$card'";
     $customerid = mysqli_fetch_array(sql_query($con, $sql))[0];
     // If customer is not in DB already, insert it and get it
     if(!$customerid) {
