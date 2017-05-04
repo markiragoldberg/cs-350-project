@@ -20,8 +20,12 @@
         echo "Your shopping cart is empty.";
     } else {
         echo "Your cart has the following items in it:<br/>";
-        foreach ($_SESSION['cart'] as $item) {
-            echo $item . "<br/>";
+        $cart_size = count($_SESSION['cart']);
+        for($i = 0; $i < $cart_size; ++$i) {
+            echo "<span>" .
+                 $_SESSION['cart'][$i] . // the actual cart item string; not super user friendly
+                 "<button class=\"delete_button\" id=\"cart_button_$i\" onclick=\"delete_cart_item(this)\">Delete</button>" .
+                 "<br/></span>";
         }
     }
     echo "<br/>";
@@ -34,7 +38,9 @@
     }
     // Display time estimate for your own order
     if($cart_timecost) {
-        echo "Your order will take <span class=\"dynamic_info\">" . ($delay_minutes ? "an additional " : "") . "$cart_timecost minutes</span> to fill.";
+        echo "<span id=\"timecost_display\">Your order will take <span class=\"dynamic_info\">" .
+             ($delay_minutes ? "an additional " : "") .
+             "<span id=\"timecost_value\">$cart_timecost</span> minutes</span> to fill.</span>";
     }
 ?>
 <br/>

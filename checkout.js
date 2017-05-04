@@ -45,6 +45,47 @@ function checkCardSecurityCode() {
     }
 };
 
+function reestimate_cart_timecost() {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            // Update estimated time cost field
+            document.getElementById("timecost_value").innerHTML = this.responseText;
+            // Remove entire timecost display if timecost becomes 0
+            if(this.responseText == "0") {
+                document.getElementById("timecost_display").innerHTML = "";
+            }
+        }
+    };
+    xmlhttp.open("GET", "ajax_timecost.php", true);
+    xmlhttp.send();
+};
+
+function delete_cart_item(caller) {
+    //shoot AJAX order to delete item from DB
+    //upon return: delete contents of span with that item index
+    let index = caller.id.substr(caller.id.lastIndexOf("_") + 1);
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            // Delete span of cart item that was deleted!
+            document.getElementById("cart_button_" + this.responseText).parentElement.innerHTML = "";
+            reestimate_cart_timecost();
+            
+            // Update id of elements that have higher indexes, so additional deletions work
+            let i = parseInt(this.responseText) + 1;
+            let later_element = document.getElementById("cart_button_" + i);
+            while(later_element) {
+                later_element.id = "cart_button_" + (i-1);
+                ++i;
+                later_element = document.getElementById("cart_button_" + i);
+            }
+        }
+    };
+    xmlhttp.open("GET", "delete_cart_item.php?item=" + index, true);
+    xmlhttp.send();
+};
+
 window.onload = function() {
 //    document.getElementById("name").onblur = checkName;
     document.getElementById("phone").onchange = checkPhone;
