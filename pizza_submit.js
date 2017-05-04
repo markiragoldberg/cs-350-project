@@ -23,11 +23,7 @@ document.getElementById("pizza_form").onsubmit = function() {
         return;
     }
     console.log(submit_string);
-    
-    // debug pizza price before using it in display
-    let price = calculate_pizza_price();
-    console.log("pizza price: " + price);
-    
+    // Place string in hidden "item" field for submission
     document.getElementById("item").value = submit_string;
     /*
     var xhr = new XMLHttpRequest();
@@ -78,11 +74,17 @@ function recalculate_pizza_price() {
     price_display.value = "$" + price.toFixed(2);
 }
 
-function click_color(target){
+// Change border of clicked image,
+// and change state of associated form input
+function click_color(target, checkbox_id){
 	if (target.style.border == "5px solid green")
 		target.style.border = "5px solid white";
 	else
 		target.style.border = "5px solid green";
+    
+    let checkbox = document.getElementById(checkbox_id);
+    checkbox.checked = !checkbox.checked;
+    recalculate_pizza_price();
 }
 
 window.onload = function() {

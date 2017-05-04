@@ -43,11 +43,11 @@
 	<table>
 		<tr>
             <!-- This is how it's done -->
-            <td><label for="ricotta"><img class="food_pic" src="ricotta_cheese.jpg" onclick="click_color(this);"></label>
+            <td><img class="food_pic" src="ricotta_cheese.jpg" onclick="click_color(this, 'ricotta');">
             <input type="checkbox" class="image_checkbox" id="ricotta" value="ricotta">Ricotta Cheese</td>
-            <td><label for="blue"><img class="food_pic" src="blue_cheese.png" onclick="click_color(this);"></label>
+            <td><img class="food_pic" src="blue_cheese.png" onclick="click_color(this, 'blue');">
             <input type="checkbox" class="image_checkbox" id="blue" value="blue">Blue Cheese</td>
-            <td><label for="feta"><img class="food_pic" src="feta_cheese.jpg" onclick="click_color(this);"></label>
+            <td><img class="food_pic" src="feta_cheese.jpg" onclick="click_color(this, 'feta');">
             <input type="checkbox" class="image_checkbox" id="feta" value="feta">Feta Cheese</td>
 		</tr>
 	</table>
@@ -55,17 +55,17 @@
 	<h1 class="green_h">Meats</h1>
 	<table>
 		<tr>
-            <td><label for="sausage"><img class="food_pic" src="sausage.jpg" onclick="click_color(this);"></label>
+            <td><img class="food_pic" src="sausage.jpg" onclick="click_color(this, 'sausage');">
             <input type="checkbox" class="image_checkbox" id="sausage" value="sausage">Sausage</td>
-            <td><label for="pepperoni"><img class="food_pic" src="pepperoni.jpg" onclick="click_color(this);"></label>
+            <td><img class="food_pic" src="pepperoni.jpg" onclick="click_color(this, 'pepperoni');">
             <input type="checkbox" class="image_checkbox" id="pepperoni" value="pepperoni">Pepperoni</td>
-            <td><label for="beef"><img class="food_pic" src="beef.jpg" onclick="click_color(this);"></label>
+            <td><img class="food_pic" src="beef.jpg" onclick="click_color(this, 'beef');">
             <input type="checkbox" class="image_checkbox" id="beef" value="beef">Beef</td>
-            <td><label for="ham"><img class="food_pic" src="ham.jpg" onclick="click_color(this);"></label>
+            <td><img class="food_pic" src="ham.jpg" onclick="click_color(this, 'ham');">
             <input type="checkbox" class="image_checkbox" id="ham" value="ham">Ham</td>
-            <td><label for="bacon"><img class="food_pic" src="bacon.jpg" onclick="click_color(this);"></label>
+            <td><img class="food_pic" src="bacon.jpg" onclick="click_color(this, 'bacon');">
             <input type="checkbox" class="image_checkbox" id="bacon" value="bacon">Bacon</td>
-            <td><label for="chicken"><img class="food_pic" src="chicken.jpg" onclick="click_color(this);"></label>
+            <td><img class="food_pic" src="chicken.jpg" onclick="click_color(this, 'chicken');">
             <input type="checkbox" class="image_checkbox" id="chicken" value="chicken">Chicken</td>
 		</tr>
 	</table>
@@ -73,36 +73,36 @@
 	<h1 class="red_h">Veggies</h1>
 	<table>
 		<tr>
-            <td><label for="pineapple"><img class="food_pic" src="pineapple.jpg" onclick="click_color(this);"></label>
+            <td><img class="food_pic" src="pineapple.jpg" onclick="click_color(this, 'pineapple');">
             <input type="checkbox" class="image_checkbox" id="pineapple" value="pineapple">Pineapple</td>
-            <td><label for="onions"><img class="food_pic" src="onion.png" onclick="click_color(this);"></label>
+            <td><img class="food_pic" src="onion.png" onclick="click_color(this, 'onions');">
             <input type="checkbox" class="image_checkbox" id="onions" value="onions">Onions</td>
-            <td><label for="red_onions"><img class="food_pic" src="red_onion.png" onclick="click_color(this);"></label>
+            <td><img class="food_pic" src="red_onion.png" onclick="click_color(this, 'red_onions');">
             <input type="checkbox" class="image_checkbox" id="red_onions" value="red_onions">Red Onions</td>
-            <td><label for="tomatoes"><img class="food_pic" src="tomatoes.png" onclick="click_color(this);"></label>
+            <td><img class="food_pic" src="tomatoes.png" onclick="click_color(this, 'tomatoes');">
             <input type="checkbox" class="image_checkbox" id="tomatoes" value="tomatoes">Tomatoes</td>
-            <td><label for="black_olives"><img class="food_pic" src="black_olives.jpg" onclick="click_color(this);"></label>
+            <td><img class="food_pic" src="black_olives.jpg" onclick="click_color(this, 'black_olives');">
             <input type="checkbox" class="image_checkbox" id="black_olives" value="black_olives">Black Olives</td>
-            <td><label for="green_olives"><img class="food_pic" src="green_olives.jpg" onclick="click_color(this);"></label>
+            <td><img class="food_pic" src="green_olives.jpg" onclick="click_color(this, 'green_olives');">
             <input type="checkbox" class="image_checkbox" id="green_olives" value="green_olives">Green Olives</td>
-            <td><label for="kalamata_olives"><img class="food_pic" src="kalamata_olives.jpg" onclick="click_color(this);"></label>
+            <td><img class="food_pic" src="kalamata_olives.jpg" onclick="click_color(this, 'kalamata_olives');">
             <input type="checkbox" class="image_checkbox" id="kalamata_olives" value="kalamata_olives">Kalamata Olives</td>
 		</tr>
 		
 		<tr>
-            <td><label for="mushrooms"><img class="food_pic" src="mushrooms.jpg" onclick="click_color(this);"></label>
+            <td><img class="food_pic" src="mushrooms.jpg" onclick="click_color(this, 'mushrooms');">
             <input type="checkbox" class="image_checkbox" id="mushrooms" value="mushrooms">Mushrooms</td>
-            <td><label for="spinach"><img class="food_pic" src="spinach.jpg" onclick="click_color(this);"></label>
+            <td><img class="food_pic" src="spinach.jpg" onclick="click_color(this, 'spinach');">
             <input type="checkbox" class="image_checkbox" id="spinach" value="spinach">Spinach</td>
-            <td><label for="banana_peppers"><img class="food_pic" src="banana_peppers.jpg" onclick="click_color(this);"></label>
+            <td><img class="food_pic" src="banana_peppers.jpg" onclick="click_color(this, 'banana_peppers');">
             <input type="checkbox" class="image_checkbox" id="banana_peppers" value="banana_peppers">Banana Peppers</td>
-            <td><label for="bell_peppers"><img class="food_pic" src="bell_peppers.jpg" onclick="click_color(this);"></label>
+            <td><img class="food_pic" src="bell_peppers.jpg" onclick="click_color(this, 'bell_peppers');">
             <input type="checkbox" class="image_checkbox" id="bell_peppers" value="bell_peppers">Bell Peppers</td>
-            <td><label for="oregano"><img class="food_pic" src="oregano.jpg" onclick="click_color(this);"></label>
+            <td><img class="food_pic" src="oregano.jpg" onclick="click_color(this, 'oregano');">
             <input type="checkbox" class="image_checkbox" id="oregano" value="oregano">Oregano</td>
-            <td><label for="broccoli"><img class="food_pic" src="broccoli.jpg" onclick="click_color(this);"></label>
+            <td><img class="food_pic" src="broccoli.jpg" onclick="click_color(this, 'broccoli');">
             <input type="checkbox" class="image_checkbox" id="broccoli" value="broccoli">Broccoli</td>
-            <td><label for="garlic"><img class="food_pic" src="garlic.jpg" onclick="click_color(this);"></label>
+            <td><img class="food_pic" src="garlic.jpg" onclick="click_color(this, 'garlic');">
             <input type="checkbox" class="image_checkbox" id="garlic" value="garlic">Garlic</td>
 		</tr>
 	</table>
