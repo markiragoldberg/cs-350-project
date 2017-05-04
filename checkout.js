@@ -1,4 +1,5 @@
-// Modified from assignment 3
+var empty_cart = "Your shopping cart is empty.";
+
 function checkPhone() {
     var field = document.getElementById("phone");
     let phone = field.value;
@@ -45,9 +46,11 @@ function checkCardSecurityCode() {
     }
 };
 
-function reestimate_cart_timecost() {
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
+// Update time to make order and price of order
+function get_cart_costs() {
+    // Time to make
+    var timecost_request = new XMLHttpRequest();
+    timecost_request.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             // Update estimated time cost field
             document.getElementById("timecost_value").innerHTML = this.responseText;
@@ -57,8 +60,37 @@ function reestimate_cart_timecost() {
             }
         }
     };
-    xmlhttp.open("GET", "ajax_timecost.php", true);
-    xmlhttp.send();
+    timecost_request.open("GET", "ajax_timecost.php", true);
+    timecost_request.send();
+    // Cost of cart
+    var cartprice_request = new XMLHttpRequest();
+    cartprice_request.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200) {
+            if(this.responseText) {
+                let prices = this.responseText.split(", ");
+                let i = 0;
+                if(prices[prices.length - 1] > 0) {
+                    let element = document.getElementById("cart_price_" + i);
+                    // Update the price of every item in the cart
+                    while(element && i < prices.length - 1) {
+                        element.innerHTML = parseFloat(prices[i]).toFixed(2);
+                        ++i;
+                        element = document.getElementById("cart_price_" + i);
+                    }
+                    // Update the total price with the last value
+                    document.getElementById("cartprice_value").innerHTML = parseFloat(prices[i]).toFixed(2);
+                } else {
+                    // Indicate cart is empty
+                    document.getElementById("shopping_cart").innerHTML = empty_cart;
+                    document.getElementById("confirm_order").disabled = true;
+                }
+            } else {
+                document.getElementById("cartprice_display").innerHTML = "";
+            }
+        }
+    };
+    cartprice_request.open("GET", "ajax_cart_price.php", true);
+    cartprice_request.send();
 };
 
 function delete_cart_item(caller) {
@@ -70,15 +102,18 @@ function delete_cart_item(caller) {
         if (this.readyState == 4 && this.status == 200) {
             // Delete span of cart item that was deleted!
             document.getElementById("cart_button_" + this.responseText).parentElement.innerHTML = "";
-            reestimate_cart_timecost();
+            get_cart_costs();
             
             // Update id of elements that have higher indexes, so additional deletions work
             let i = parseInt(this.responseText) + 1;
             let later_element = document.getElementById("cart_button_" + i);
-            while(later_element) {
+            let price_element = document.getElementById("cart_price_" + i);
+            while(later_element) {  // there should always be one price element for each button
                 later_element.id = "cart_button_" + (i-1);
+                price_element.id = "cart_price_" + (i-1);
                 ++i;
                 later_element = document.getElementById("cart_button_" + i);
+                price_element = document.getElementById("cart_price_" + i);
             }
         }
     };
@@ -91,4 +126,11 @@ window.onload = function() {
     document.getElementById("phone").onchange = checkPhone;
     document.getElementById("card").onblur = checkCard;
     document.getElementById("ccSec").onblur = checkCardSecurityCode;
+    
+    // If the cart is empty, disable the confirm order button
+    if(document.getElementById("shopping_cart").innerHTML === empty_cart) {
+        document.getElementById("confirm_order").disabled = true;
+    } else {
+        get_cart_costs();
+    }
 };
