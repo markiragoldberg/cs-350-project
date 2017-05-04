@@ -1,4 +1,5 @@
 document.getElementById("pizza_form").onsubmit = function() {
+    //let submit_string = document.getElementById("count").value + " pizza";
     let submit_string = "pizza";
     
     let elements = document.pizza_form.getElementsByTagName("input");
@@ -41,6 +42,7 @@ document.getElementById("pizza_form").onsubmit = function() {
 function recalculate_pizza_price() {
     let form = document.getElementById("pizza_form");
     let elements = form.getElementsByTagName("input");
+    let count = document.getElementById("count").value;
     var price = 0.0;
     for(var i = 0; i < elements.length; ++i) {
         if(elements[i].checked) {
@@ -71,6 +73,7 @@ function recalculate_pizza_price() {
         }
     }
     price_display = document.getElementById("price_display");
+    price = price * count;
     price_display.value = "$" + price.toFixed(2);
 }
 
@@ -94,4 +97,15 @@ window.onload = function() {
     }
     // Display the price of the default pizza when the page loads
     recalculate_pizza_price();
+    
+    // Ensure the count input is never empty
+    document.getElementById("count").onblur = function() {
+        if(this.value == "") {
+            this.value = 1;
+            recalculate_pizza_price();
+        } else if(this.value > 20) {
+            this.value = 20;
+            recalculate_pizza_price();
+        }
+    }
 };

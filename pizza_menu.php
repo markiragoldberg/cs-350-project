@@ -108,6 +108,7 @@
 	</table>
 <br><br>
 <input type="text" id="item" name="item"/><br/>
+Number of pizzas: <input type="number" id="count" name="count" value="1" min="1" max="20"/>
 <input type="text" id="price_display" disabled /><input id=submit type="submit" value="Add pizza to cart"/>
 
 <script type="text/javascript" src="pizza_submit.js"></script>

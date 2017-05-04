@@ -45,6 +45,7 @@
              ".</span>";
     }
 ?>
+<input type="button" onclick="location.href='clear_cart.php';" value="Clear Your Cart"/>
 <br/>
 <h3 class="green_h">Payment info</h3>
 <form method='post' action='OrderPizza.php'>
@@ -68,7 +69,6 @@
     </table>
     <input type="text" id="item" name="item"/><br/>
     <input type="submit" value="Confirm Order"/>
-    <input type="button" onclick="location.href='clear_cart.php';" value="Clear Your Cart"/>
 </form>
 
 <script type="text/javascript" src="checkout.js"></script>
