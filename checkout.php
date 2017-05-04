@@ -13,6 +13,8 @@
 <h3 class="red_h">Your Order</h3>
 <?php
     session_start();
+    include('estimate_current_delay.php');
+    include('estimate_cart_timecost.php');
     
     if(!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
         echo "Your shopping cart is empty.";
@@ -21,6 +23,18 @@
         foreach ($_SESSION['cart'] as $item) {
             echo $item . "<br/>";
         }
+    }
+    echo "<br/>";
+    // Display time estimate for existing orders
+    $delay_minutes = estimate_current_delay();
+    $cart_timecost = estimate_cart_timecost();
+    if($delay_minutes) {
+        echo "Other customers are ahead of you!<br/>
+              It will take us <span class=\"dynamic_warning\">$delay_minutes minutes</span> before we can start your order.<br/>";
+    }
+    // Display time estimate for your own order
+    if($cart_timecost) {
+        echo "Your order will take <span class=\"dynamic_info\">" . ($delay_minutes ? "an additional " : "") . "$cart_timecost minutes</span> to fill.";
     }
 ?>
 <br/>
