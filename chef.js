@@ -20,11 +20,11 @@ console.log(xhr.response);
 			document.getElementById("orders").insertRow(-1);
 			row = document.getElementById("orders").insertRow(-1);
 			currentcustomer = pizza[1];
-			row.style.margin-top="10px";
+			row.style.verticalAlign="bottom";
+			row.style.height="50px";
 		}
 
-		if (row.cells.length==5)
-			row = document.getElementById("orders").insertRow(-1);
+		row = document.getElementById("orders").insertRow(-1);
 
 		var cell=row.insertCell(-1);
 		cell.innerHTML = pizza[0];
