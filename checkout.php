@@ -40,7 +40,9 @@
     if($cart_timecost) {
         echo "<span id=\"timecost_display\">Your order will take <span class=\"dynamic_info\">" .
              ($delay_minutes ? "an additional " : "") .
-             "<span id=\"timecost_value\">$cart_timecost</span> minutes</span> to fill.</span>";
+             "<span id=\"timecost_value\">$cart_timecost</span> minutes</span> to fill" .
+             ($delay_minutes ? " after that" : "") .
+             ".</span>";
     }
 ?>
 <br/>
