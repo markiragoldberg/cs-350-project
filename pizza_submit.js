@@ -42,7 +42,7 @@ document.getElementById("pizza_form").onsubmit = function() {
     */
 };
 
-function calculate_pizza_price() {
+function recalculate_pizza_price() {
     let form = document.getElementById("pizza_form");
     let elements = form.getElementsByTagName("input");
     var price = 0.0;
@@ -74,7 +74,8 @@ function calculate_pizza_price() {
             }
         }
     }
-    return price;
+    price_display = document.getElementById("price_display");
+    price_display.value = "$" + price.toFixed(2);
 }
 
 function click_color(target){
@@ -85,5 +86,10 @@ function click_color(target){
 }
 
 window.onload = function() {
-    
+    let elements = document.pizza_form.getElementsByTagName("input");
+    for(var i = 0; i < elements.length; ++i) {
+        elements[i].onchange = recalculate_pizza_price;
+    }
+    // Display the price of the default pizza when the page loads
+    recalculate_pizza_price();
 };

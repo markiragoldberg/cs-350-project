@@ -67,3 +67,6 @@ text-align: left;
     display: none;
 }
 
+#price_display {
+    color: #000000;
+}

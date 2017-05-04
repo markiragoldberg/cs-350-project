@@ -28,12 +28,12 @@
 <form id="pizza_form" name="pizza_form" method="post" action="add_pizza_to_cart.php">
 	
 	<h1 class="red_h">Size</h1>
-	<input type="radio" id="small" name="size" value="small" required>Small
+	<input type="radio" id="small" name="size" value="small" checked required>Small
 	<input type="radio" id="medium" name="size" value="medium">Medium	
 	<input type="radio" id="large" name="size" value="large">Large
 	
 	<h1 class="green_h">Sauces</h1>
-	<input type="radio" id="tomato_sauce" name="sauce" value="tomato_sauce" required>Tomato Sauce
+	<input type="radio" id="tomato_sauce" name="sauce" value="tomato_sauce" checked required>Tomato Sauce
 	<input type="radio" id="dressing" name="sauce" value="dressing">Dressing
 	<input type="radio" id="garlic_butter" name="sauce" value="garlic_butter">House-Made Garlic Butter	
 	<input type="radio" id="hummus" name="sauce" value="hummus">Hummus
@@ -108,7 +108,7 @@
 	</table>
 <br><br>
 <input type="text" id="item" name="item"/><br/>
-<input id=submit type="submit" value="Add pizza to cart"/>
+<input type="text" id="price_display" disabled /><input id=submit type="submit" value="Add pizza to cart"/>
 
 <script type="text/javascript" src="pizza_submit.js"></script>
 
