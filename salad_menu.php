@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-	<title>Mario's Salad Menu</title>
+	<title>Mario's Pizza</title>
 	<link rel="stylesheet" type="text/css" href="pizza.css">
 </head>
 
@@ -21,10 +21,10 @@
     }
 ?>
 
-<form id="salad_form" name="salad_form" method="post" action="add_pizza_to_cart.php">
+<form id="salad_form" name="salad_form" method="post" action="add_salad_to_cart.php">
 	
 	<h1 class="red_h">Choose Your Salad!</h1>
-	<input type="radio" id="house" name="type" value="house" required>House
+	<input type="radio" id="house" name="type" value="house" checked required>House
 	<input type="radio" id="combo" name="type" value="combo">Combo
 	<input type="radio" id="mediterranean" name="type" value="mediterranean">Mediterranean
 	<input type="radio" id="blt" name="type" value="blt">BLT
@@ -48,7 +48,9 @@
     <br/>
 
 <br><br>
-<input id=submit type="submit" value="Add Salad to cart"/>
+<input type="text" id="item" name="item"/><br/>
+Number of salads: <input type="number" id="count" name="count" value="1" min="1" max="20"/>
+<input type="text" id="price_display" disabled /><input id=submit type="submit" value="Add salad to cart"/>
 
 <script type="text/javascript" src="salad_submit.js"></script>
 

@@ -26,17 +26,6 @@ function calculate_pizza_string() {
     console.log(submit_string);
     // Place string in hidden "item" field for submission
     document.getElementById("item").value = submit_string;
-    /*
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-        if(xhr.readystate == 4 && xhr.status == 200) {
-            alert(xhr.responseText);
-        }
-    }
-    xhr.open("POST", "order_pizza.php", true);
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.send("pizza=" + submit_string);
-    */
 };
 
 function recalculate_pizza_price() {

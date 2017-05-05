@@ -2,6 +2,10 @@
 
 function get_item_price($item) {
     $type = strstr($item, ',', true);
+    // If no descriptors, use just the item
+    if(!$type) {
+        $type = $item;
+    }
     switch($type) {
         case 'pizza':
             return get_pizza_price($item);

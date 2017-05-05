@@ -54,24 +54,19 @@
             ('black_olives'), ('green_olives'), ('kalamata_olives'), ('mushrooms'), ('spinach'), ('banana_peppers'),
             ('bell_peppers'), ('oregano'), ('broccoli'), ('garlic')";
      sql_query($con, $sql);
+     
     $sql = "CREATE TABLE calzone_descriptors (
             id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
             name VARCHAR(30)
             )";
     sql_query($con, $sql);
-    $sql = "INSERT INTO calzone_descriptors (name) VALUES (
-            'tomato_sauce'), ('dressing'), ('ricotta'), ('blue'), ('feta'), ('sausage'), ('pepperoni'), 
-            ('beef'), ('ham'), ('bacon'), ('chicken'), ('pineapple'), ('onions'), ('red_onions'), ('tomatos'), 
+    $sql = "INSERT INTO calzone_descriptors (name) VALUES 
+            ('ricotta'), ('blue'), ('feta'), ('sausage'), ('pepperoni'), 
+            ('beef'), ('ham'), ('bacon'), ('chicken'), ('pineapple'), ('onions'), ('red_onions'), ('tomatoes'), 
             ('black_olives'), ('green_olives'), ('kalamata_olives'), ('mushrooms'), ('spinach'), ('banana_peppers'),
             ('bell_peppers'), ('oregano'), ('broccoli'), ('garlic')";
      sql_query($con, $sql);
-  /*  $sql = "CREATE TABLE appetizers (
-            id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, appetizer VARCHAR(30)
-            )";
-    sql_query($con, $sql);
-    $sql = "INSERT INTO appetizers (appetizer) VALUES (
-            'breadstix'), ('cheesestix'), ('pepperonistix'), ('meatstix'), ('veggiestix'), ('garlicbread')";
-     sql_query($con, $sql);*/
+     
     $sql = "CREATE TABLE salad_descriptors (
             id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
             name VARCHAR(30)
@@ -85,22 +80,15 @@
             ('black_olives'), ('green_olives'), ('kalamata_olives'),
             ('bell_peppers'), ('croutons')";
      sql_query($con, $sql);
-  /*  $sql = "CREATE TABLE subs (
-            id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, sub VARCHAR(30)
-            )";
-    sql_query($con, $sql);
-    $sql = "INSERT INTO subs (sub) VALUES (
-            'italiansub'), ('pizzasub')";
-     sql_query($con, $sql);
-   */ $sql = "CREATE TABLE drink_descriptors (
+     
+    $sql = "CREATE TABLE drink_descriptors (
             id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
             name VARCHAR(30)
             )";
     sql_query($con, $sql);
     $sql = "INSERT INTO drink_descriptors (name) VALUES 
-            ('pepsi'), ('diet_pepsi'), ('mountain_dew'), ('tropicana_pink_lemonade'), ('dr_pepper'), ('7_up'), ('sweet_tea'), 
-            ('tea'), ('ski'), ('rummy'), ('orange'), ('ginger_ale'), ('ibc_root_beer'), ('san_pellegrino'), ('decaf_coffee'), 
-            ('coffee'), ('hot_tea')";
+            ('water'), ('pepsi'), ('diet_pepsi'), ('mountain_dew'), ('diet_mountain_dew'), ('dr_pepper'), ('diet_dr_pepper'), ('root_beer'), 
+            ('sprite')";
      sql_query($con, $sql);
     
     mysqli_close($con);
