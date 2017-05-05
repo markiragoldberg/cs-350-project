@@ -103,3 +103,8 @@ text-align: left;
 #price_display {
     color: #000000;
 }
+
+#chef_tr
+{
+    border: 5px solid black;
+}
