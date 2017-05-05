@@ -16,6 +16,9 @@ function get_item_price($item) {
     }
 }
 
+// TODO WARNING REDO Put the prices in the db when you can do so without
+// breaking anything, and get the prices from the db too
+
 function get_pizza_price($pizza) {    
     $price = 0;
     $descriptors = explode(', ', $pizza);
@@ -48,7 +51,7 @@ function get_pizza_price($pizza) {
     return $price;
 }
 function get_calzone_price($calzone) {  
-    return 8;
+    return 7.25;
 }
 function get_salad_price($salad) {  
     return 5;

@@ -1,4 +1,4 @@
-document.getElementById("pizza_form").onsubmit = function() {
+function calculate_pizza_string() {
     //let submit_string = document.getElementById("count").value + " pizza";
     let submit_string = "pizza";
     
@@ -40,41 +40,20 @@ document.getElementById("pizza_form").onsubmit = function() {
 };
 
 function recalculate_pizza_price() {
-    let form = document.getElementById("pizza_form");
-    let elements = form.getElementsByTagName("input");
-    let count = document.getElementById("count").value;
     var price = 0.0;
-    for(var i = 0; i < elements.length; ++i) {
-        if(elements[i].checked) {
-            switch(elements[i].getAttribute("name"))
-            {
-                case "size":
-                    switch(elements[i].getAttribute("id"))
-                    {
-                        case "small":
-                            price += 7.00;
-                            break;
-                        case "medium":
-                            price += 10.50;
-                            break;
-                        case "large":
-                        default:
-                            price += 14.00;
-                            break;
-                    }
-                    break;
-                case "sauce":
-                    // sauce is free
-                    break;
-                default:
-                    // all toppings are $0.75
-                    price += 0.75;
-            }
+    calculate_pizza_string();
+    var price_request = new XMLHttpRequest();
+    price_request.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200) {
+            let price =  parseFloat(this.responseText);
+            let count = document.getElementById("count").value;
+            price_display = document.getElementById("price_display");
+            price = price * count;
+            price_display.value = "$" + price.toFixed(2);
         }
     }
-    price_display = document.getElementById("price_display");
-    price = price * count;
-    price_display.value = "$" + price.toFixed(2);
+    price_request.open("GET", "ajax_item_price.php?item=" + document.getElementById("item").value, true);
+    price_request.send();
 }
 
 // Change border of clicked image,
@@ -108,4 +87,7 @@ window.onload = function() {
             recalculate_pizza_price();
         }
     }
+    
+    // Calculate the pizza before submitting
+    document.getElementById("pizza_form").onsubmit = calculate_pizza_string;
 };
