@@ -25,18 +25,22 @@
     switch ($type) {
     case 0:
     	$inputType="pizza_descriptors";
+	$itemType="Pizza: ";
     break;
 
     case 1:
     	$inputType="calzone_descriptors";
+	$itemType="Calzone: ";
     break;
 
     case 2:
     	$inputType="salad_descriptors";
+	$itemType="Salad: ";
     break;
 
     case 3:
     	$inputType="drink_descriptors";
+	$itemType="Drink: ";
     break;
 
     }
@@ -60,6 +64,6 @@
       $topping = $topping.($nextTopping[0]);
     }
 
-    $topping = $topping.".".$order["customer_id"];
+    $topping = $topping.".".$order["customer_id"].".".$itemType;
 	print $topping;
 ?>
