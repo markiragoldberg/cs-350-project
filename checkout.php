@@ -11,18 +11,43 @@
 <p id=logo><img src="Marios_Logo.jpg" alt="pizza_logo" /></p>
 
 <h3 class="red_h">Your Order</h3>
+<span id="shopping_cart">
 <?php
     session_start();
-    
-    if(!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
-        echo "Your shopping cart is empty.";
-    } else {
+    include('estimate_current_delay.php');
+    include('estimate_cart_timecost.php');
+    if(isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
         echo "Your cart has the following items in it:<br/>";
-        foreach ($_SESSION['cart'] as $item) {
-            echo $item . "<br/>";
+        $cart_size = count($_SESSION['cart']);
+        for($i = 0; $i < $cart_size; ++$i) {
+            echo "<span>" .
+                 $_SESSION['cart'][$i] . // the actual cart item string; not super user friendly
+                 " $<span class=\"price_display\" id=\"cart_price_$i\"></span>" . // span for inserting the item price
+                 " <button class=\"delete_button\" id=\"cart_button_$i\" onclick=\"delete_cart_item(this)\">Delete</button>" .
+                 "<br/></span>";
+        }
+        echo "<span id=\"cartprice_display\">Your total is $<span id=\"cartprice_value\"></span>.</span><br/>";
+        // Display time estimate for existing orders
+        $delay_minutes = estimate_current_delay();
+        $cart_timecost = estimate_cart_timecost();
+        if($delay_minutes) {
+            echo "Other customers are ahead of you!<br/>
+                  It will take us <span class=\"dynamic_warning\">$delay_minutes minutes</span> before we can start your order.<br/>";
+        }
+        // Display time estimate for your own order
+        if($cart_timecost) {
+            echo "<span id=\"timecost_display\">Your order will take <span class=\"dynamic_info\">" .
+                 ($delay_minutes ? "an additional " : "") .
+                 "<span id=\"timecost_value\">$cart_timecost</span> minutes</span> to fill" .
+                 ($delay_minutes ? " after that" : "") .
+                 ".</span>";
         }
     }
 ?>
+<!-- span id = shopping_cart -->
+<input type="button" onclick="location.href='clear_cart.php';" value="Clear Your Cart"/>
+</span>
+
 <br/>
 <h3 class="green_h">Payment info</h3>
 <form method='post' action='OrderPizza.php'>
@@ -45,8 +70,7 @@
         </tr>
     </table>
     <input type="text" id="item" name="item"/><br/>
-    <input type="submit" value="Confirm Order"/>
-    <input type="button" onclick="location.href='clear_cart.php';" value="Clear Your Cart"/>
+    <input type="submit" id ="confirm_order" value="Confirm Order"/>
 </form>
 
 <h2></h2>

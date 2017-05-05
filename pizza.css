@@ -57,6 +57,18 @@ height: 75px;
 border: 5px solid white;
 }
 
+.dynamic_warning
+{
+font-weight: bold;
+color: #990000;
+}
+
+.dynamic_info
+{
+font-weight: bold;
+color: #006600;
+}
+
 input.image_checkbox
 {
 display:none;
