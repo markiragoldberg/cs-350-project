@@ -50,7 +50,6 @@
 </form>
 
 <h2></h2>
-
 <ul>
   <li><a href="pizza_menu.php">Pizza Menu</a></li>
   <li><a href="salad_menu.php">Salad Menu</a></li>
@@ -58,7 +57,6 @@
   <li><a href="drinks_menu.php">Drinks Menu</a></li>
   <li><a href="checkout.php">Cart</a></li>
 </ul>
-
 
 <script type="text/javascript" src="checkout.js"></script>
 

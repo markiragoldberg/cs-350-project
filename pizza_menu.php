@@ -124,7 +124,6 @@
   <li><a href="drinks_menu.php">Drinks Menu</a></li>
   <li><a href="checkout.php">Cart</a></li>
 </ul>
-
 		
 </body>
 </html>
