@@ -26,10 +26,10 @@ function get_pizza_price($pizza) {
                 $price += 7.0;
                 break;
             case "medium":
-                $price += 10.5;
+                $price += 9.0;
                 break;
             case "large":
-                $price += 14.0;
+                $price += 10.75;
                 break;
             // The itemtype is free
             // The sauce is free
