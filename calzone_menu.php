@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-	<title>Mario's Pizza</title>
+	<title>Mario's Calzone Menu</title>
 	<link rel="stylesheet" type="text/css" href="pizza.css">
 </head>
 
@@ -25,19 +25,10 @@
     }
 ?>
 
-<form id="pizza_form" name="pizza_form" method="post" action="add_pizza_to_cart.php">
-	
-	<h1 class="red_h">Size</h1>
-	<input type="radio" id="small" name="size" value="small" required>Small
-	<input type="radio" id="medium" name="size" value="medium">Medium	
-	<input type="radio" id="large" name="size" value="large">Large
-	
-	<h1 class="green_h">Sauces</h1>
-	<input type="radio" id="tomato_sauce" name="sauce" value="tomato_sauce" required>Tomato Sauce
-	<input type="radio" id="dressing" name="sauce" value="dressing">Dressing
-	<input type="radio" id="garlic_butter" name="sauce" value="garlic_butter">House-Made Garlic Butter	
-	<input type="radio" id="hummus" name="sauce" value="hummus">Hummus
-	<input type="radio" id="olive_oil" name="sauce" value="olive_oil">Olive Oil
+<form id="calzone_form" name="calzone_form" method="post" action="add_pizza_to_cart.php">
+
+<h1 class="green_h">What is a Calzone?</h1>
+<h2> A calzone is a baked turnover made with pizza dough. Our calzones are stuffed with mozzarella, house made garlic butter, choice of toppings and a side of Mario's classic red sauce! </h2>
 
 	<h1 class="red_h">Cheeses</h1>
 	<table>
@@ -108,8 +99,7 @@
 	</table>
 <br><br>
 <input type="text" id="item" name="item"/><br/>
-
-<input id=submit type="submit" value="Add pizza to cart"/>
+<input id=submit type="submit" value="Add Calzone to cart"/>
 
 <script type="text/javascript" src="pizza_submit.js"></script>
 
