@@ -3,25 +3,16 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<title>Chef's Table</title>
-	<link rel="stylesheet" type="text/css" href="Pizza_example.css">
-	<script type="text/JavaScript" src = "chef.js">
+	<link rel="stylesheet" type="text/css" href="pizza.css">
+	<script type="text/javascript" src = "chef.js">
 	</script>
 </head>
 
-<body>
-<table class=orders>
-	<tr>
-		<th class=orders> Recent Orders </th>
-	</tr>
-	
-	<tr>
-		<td> <input type="text" value="pizza_info"></td>
-	</tr>
+<body onload="execute()">
 
-	<tr>
-		<td> <button type="button" onclick="prev_pizza()"> < </button> </td>
-		<td> <input type="text" value="1" id="pizza_count"></td>
-		<td> <button type="button" onclick="next_pizza()"> > </button> </td>
-	</tr>
+<table id="orders" class=orders border="10px">
 
 </table>
+<p id="empty_message">There are no orders to fill.</p>
+</body>
+</html>
