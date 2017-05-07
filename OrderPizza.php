@@ -43,6 +43,7 @@
         $getCustomerId->bind_param("s", $phone);
         $getCustomerId->execute();
         $customerid = mysqli_fetch_array(mysqli_stmt_get_result($getCustomerId))[0];
+        $insertCustomerId->close();
     }
     echo "customer_id is " . $customerid . "<br/>";
     
