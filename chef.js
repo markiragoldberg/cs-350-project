@@ -38,8 +38,9 @@ function start_page()
                 btn.onclick = function() {
                     let id = this.id;
                     itemremove(id);
-                    document.getElementById("orders").deleteRow(row.
-                                        rowIndex);
+                    let row = this.parentNode.parentNode;
+                    // DOM4 feature
+                    row.remove();
                     if(orders.lastChild.innerHTML == "") {
                         document.getElementById("empty_message").style.display = "inline";
                     }
