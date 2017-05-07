@@ -125,4 +125,9 @@
     
     $getCustomerId->close();
     mysqli_close($con);
+    
+    // Log you in for the order tracker
+    // Redirect you to the pizza menu
+    $_SESSION['phone'] = $phone;
+    header('Location: pizza_menu.php');
 ?>
