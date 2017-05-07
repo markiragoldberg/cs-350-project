@@ -79,4 +79,6 @@ window.onload = function() {
     
     // Calculate the pizza before submitting
     document.getElementById("pizza_form").onsubmit = calculate_pizza_string;
+    // Login (in track.js)
+    login();
 };

@@ -10,10 +10,6 @@
 
 <p id=logo><img src="Marios_Logo.jpg" alt="pizza_logo" /></p>
 
-<!--
-    Link to shopping cart
-    This could look nicer later
--->
 <?php
     session_start();
     
@@ -24,6 +20,15 @@
         echo "Your shopping cart has " . count($cart) . " items in it. <a href='checkout.php'>Checkout</a>";
     }
 ?>
+
+<div id="login_form">
+    Phone #:<input type="text" id="phone" name="phone" onBlur="checkPhone()"/>
+    <button onclick="login()">Track Your Order</button>
+</div>
+<div id="track_display" style="display:none">
+    <span id="track_text"></span>
+    <button onclick="logout()">Logout</button>
+</div>
 
 <form id="calzone_form" name="calzone_form" method="post" action="add_calzone_to_cart.php">
 
@@ -102,6 +107,7 @@
 Number of calzones: <input type="number" id="count" name="count" value="1" min="1" max="20"/>
 <input type="text" id="price_display" disabled /><input id=submit type="submit" value="Add calzone to cart"/>
 
+<script type="text/javascript" src="track.js"></script>
 <script type="text/javascript" src="calzone_submit.js"></script>
 
 </form>

@@ -62,6 +62,11 @@
         $topping = $topping . $nextTopping;
     }
     
+    // Bad things happen on the client if the topping string is empty
+    if(!$topping) {
+        $topping = "plain";
+    }
+    
     // Get phone # to id the overall order
     $getPhone = $con->prepare("SELECT phone FROM pizza_customers WHERE id    = ?");
     $customerid = $order["customer_id"];

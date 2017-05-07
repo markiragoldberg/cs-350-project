@@ -7,13 +7,8 @@
 </head>
 
 <body>
-
 <p id=logo><img src="Marios_Logo.jpg" alt="pizza_logo" /></p>
 
-<!--
-    Link to shopping cart
-    This could look nicer later
--->
 <?php
     session_start();
     
@@ -24,6 +19,15 @@
         echo "Your shopping cart has " . count($cart) . " items in it. <a href='checkout.php'>Checkout</a>";
     }
 ?>
+
+<div id="login_form">
+    Phone #:<input type="text" id="phone" name="phone" onBlur="checkPhone()"/>
+    <button onclick="login()">Track Your Order</button>
+</div>
+<div id="track_display" style="display:none">
+    <span id="track_text"></span>
+    <button onclick="logout()">Logout</button>
+</div>
 
 <form id="pizza_form" name="pizza_form" method="post" action="add_pizza_to_cart.php">
 	
@@ -111,12 +115,12 @@
 Number of pizzas: <input type="number" id="count" name="count" value="1" min="1" max="20"/>
 <input type="text" id="price_display" disabled /><input id=submit type="submit" value="Add pizza to cart"/>
 
-<script type="text/javascript" src="pizza_submit.js"></script>
+<script type="text/javascript" src="track.js"></script>
+<script type="text/javascript" src="pizza_submit.js"></script>  
 
 </form>
 
 <h2></h2>
-
 <ul>
   <li><a href="pizza_menu.php">Pizza Menu</a></li>
   <li><a href="salad_menu.php">Salad Menu</a></li>

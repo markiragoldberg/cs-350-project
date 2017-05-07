@@ -21,6 +21,15 @@
     }
 ?>
 
+<div id="login_form">
+    Phone #:<input type="text" id="phone" name="phone" onBlur="checkPhone()"/>
+    <button onclick="login()">Track Your Order</button>
+</div>
+<div id="track_display" style="display:none">
+    <span id="track_text"></span>
+    <button onclick="logout()">Logout</button>
+</div>
+
 <form id="drinks_form" name="drinks_form" method="post" action="add_drinks_to_cart.php">
 	
 	<h1 class="red_h">Choose Your Drink!</h1>
@@ -40,6 +49,7 @@
 Number of drinks: <input type="number" id="count" name="count" value="1" min="1" max="20"/>
 <input type="text" id="price_display" disabled /><input id=submit type="submit" value="Add drink to cart"/>
 
+<script type="text/javascript" src="track.js"></script>
 <script type="text/javascript" src="drinks_submit.js"></script>
 
 </form>

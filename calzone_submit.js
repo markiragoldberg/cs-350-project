@@ -65,4 +65,6 @@ window.onload = function() {
     
     // Calculate the calzone before submitting
     document.getElementById("calzone_form").onsubmit = calculate_calzone_string;
+    // Login (in track.js)
+    login();
 };
