@@ -1,6 +1,4 @@
 <?php
-    die("debugging");
-
     $itemid = $_GET["item"];
     function sql_query($con, $sql) {
         $result = mysqli_query($con, $sql);
