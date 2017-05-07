@@ -12,9 +12,9 @@
         }
     }
     $servername = "dbserv.cs.siu.edu";
-    $username = "cleidner";
-    $password = "yNQ8M2uh";
-    $dbname = "cleidner";
+    $username = "mgoldberg";
+    $password = "Eu7BugDf";
+    $dbname = "mgoldberg";
     $con = mysqli_connect($servername, $username, $password, $dbname);
     if(!$con)
     {

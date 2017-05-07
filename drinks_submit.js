@@ -1,36 +1,33 @@
-function calculate_pizza_string() {
+function calculate_drinks_string() {
     //let submit_string = document.getElementById("count").value + " pizza";
-    let submit_string = "pizza";
+    let submit_string = "drink";
     
-    let elements = document.pizza_form.getElementsByTagName("input");
-    let size = 0;
-    let sauce = 0;
-    
+    let elements = document.drinks_form.getElementsByTagName("input");
+    let type = 0;
     
     for(var i = 0; i < elements.length; ++i) {
         if(elements[i].checked) {
             submit_string += ", " + elements[i].id;
             let name = elements[i].getAttribute("name");
-            if(name === "size") {
-                ++size;
-            } else if(name === "sauce") {
-                ++sauce;
+            if(name === "type") {
+                ++type;
             }
         }
     }
     
     // Do not submit pizza with nonsensical size / crust options
-    if(size != 1 || sauce != 1) {
+    if(type != 1) {
         return;
     }
+    
     console.log(submit_string);
     // Place string in hidden "item" field for submission
     document.getElementById("item").value = submit_string;
 };
 
-function recalculate_pizza_price() {
+function recalculate_drinks_price() {
     var price = 0.0;
-    calculate_pizza_string();
+    calculate_drinks_string();
     var price_request = new XMLHttpRequest();
     price_request.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200) {
@@ -55,28 +52,28 @@ function click_color(target, checkbox_id){
     
     let checkbox = document.getElementById(checkbox_id);
     checkbox.checked = !checkbox.checked;
-    recalculate_pizza_price();
+    recalculate_drinks_price();
 }
 
 window.onload = function() {
-    let elements = document.pizza_form.getElementsByTagName("input");
+    let elements = document.drinks_form.getElementsByTagName("input");
     for(var i = 0; i < elements.length; ++i) {
-        elements[i].onchange = recalculate_pizza_price;
+        elements[i].onchange = recalculate_drinks_price;
     }
     // Display the price of the default pizza when the page loads
-    recalculate_pizza_price();
+    recalculate_drinks_price();
     
     // Ensure the count input is never empty
     document.getElementById("count").onblur = function() {
         if(this.value == "") {
             this.value = 1;
-            recalculate_pizza_price();
+            recalculate_drinks_price();
         } else if(this.value > 20) {
             this.value = 20;
-            recalculate_pizza_price();
+            recalculate_drinks_price();
         }
     }
     
     // Calculate the pizza before submitting
-    document.getElementById("pizza_form").onsubmit = calculate_pizza_string;
+    document.getElementById("drinks_form").onsubmit = calculate_drinks_string;
 };
